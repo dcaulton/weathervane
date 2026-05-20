@@ -1,2 +1,2 @@
 # weathervane
-track outdoor trends using weather information and camera feeds of an area
+a proactive, multi-step reasoning agent that fuses weather data, imagery from a Frigate system, DJI Neo 2 photogrammetry, persistent notes via Obsidian and GitHub, and local sensors into person-in-the-middle reports, threshold-triggered actions, and forward-looking suggestions. It runs entirely on a k8s cluster with 1080Ti, stays privacy-first and mostly offline, and stack Postgres, Mosquitto, Neo4j, MLflow, Frigate as its foundation.
