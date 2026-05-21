@@ -34,6 +34,16 @@ class AgentSettings(BaseSettings):
     github_repo_owner: str | None = None
     github_repo_name: str | None = None
 
+    # Location (sensitive - never commit real values)
+    default_latitude: float = Field(
+        41.8781,  # Chicago placeholder - will be overridden by .env
+        description="Default latitude for weather queries",
+    )
+    default_longitude: float = Field(
+        -87.6298,  # Chicago placeholder
+        description="Default longitude for weather queries",
+    )
+
 
 # Singleton instance
 settings = AgentSettings()

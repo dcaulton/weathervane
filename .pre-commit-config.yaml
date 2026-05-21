@@ -10,8 +10,14 @@ repos:
     rev: v1.15.0
     hooks:
       - id: mypy
+        # This is the key fix
         additional_dependencies:
           - pydantic
           - pydantic-settings
           - types-psycopg2
-        args: [--no-strict-optional]
+          - langchain-core
+          - structlog
+        # Pass the project config explicitly
+        args:
+          - --config-file=pyproject.toml
+          - --no-strict-optional

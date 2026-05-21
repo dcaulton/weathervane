@@ -71,7 +71,7 @@ dev = [
     "types-pyyaml",
 ]
 
-[tool.uv]
+[dependency-groups]
 dev-dependencies = ["weathervane[dev]"]
 
 [tool.ruff]
@@ -95,6 +95,18 @@ disallow_incomplete_defs = true
 check_untyped_defs = true
 strict = true
 plugins = ["pydantic.mypy"]
+
+# === Ignore missing types for third-party libraries ===
+[[tool.mypy.overrides]]
+module = [
+    "structlog",
+    "structlog.*",
+    "langchain_core.*",
+    "langchain.*",
+    "openmeteo_requests",
+    "openmeteo_requests.*",
+]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
