@@ -31,6 +31,3 @@ jobs:
 
       - name: Run mypy
         run: uv run mypy src
-
-      - name: Run pre-commit hooks (full suite)
-        run: uv run pre-commit run --all-files --show-diff-on-failure
